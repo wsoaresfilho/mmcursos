@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/categorias', 'CategoriasController@index')->name('categorias');
+
+Route::get('/categorias/edit/{id}', 'CategoriasController@edit')->name('categoriasedit');
