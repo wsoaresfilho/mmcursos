@@ -126,11 +126,11 @@
 
 
                     @if (Auth::guest() == false)
-                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-format-color-fill fa-fw"></i> <span class="hide-menu">Menu 1<span class="fa arrow"></span> <span class="label label-rouded label-info pull-right">20</span> </span></a>
+                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-format-color-fill fa-fw"></i> <span class="hide-menu">Administração<span class="fa arrow"></span> <span class="label label-rouded label-info pull-right">20</span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="panels-wells.html"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Item 1</span></a></li>
+                            <li><a href="categorias"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Categorias</span></a></li>
                             <li><a href="panel-ui-block.html"><i data-icon="&#xe025;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Item2</span></a></li>
-                            <li><a href="buttons.html"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Item3</span></a></li>
+                            <li><a href="categorias"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Item3</span></a></li>
                         </ul>
                  @endif 
             </div>
