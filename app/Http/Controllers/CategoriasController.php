@@ -14,48 +14,48 @@ class CategoriasController extends Controller
         return view('categorias.index',['categorias' => $Categorias]);
     }
   
-    public function create()
+    public function add()
     {
-        return view('Categorias.create');
+        return view('categorias.add');
     }
+
+
   
-    public function store(CategoriaRequest $request)
+     public function store(Request $request)
     {
-        $Categoria = new Categorias;
-        $Categoria->name        = $request->name;
-        $Categoria->description = $request->description;
-        $Categoria->quantity    = $request->quantity;
-        $Categoria->price       = $request->price;
-        $Categoria->save();
-        return redirect()->route('Categorias.index')->with('message', 'Categoria created successfully!');
+        $this->validate($request, [
+            'nome' => 'required',
+            'descricao' => 'required',
+        ]);
+        
+        $produtos = new CategoriasModel;
+        $produtos->nome = $request->nome;
+        $produtos->descricao = $request->descricao;
+        $produtos->save();
+        return redirect('categorias')->with('message', 'Adicionado com sucesso!');
+        
     }
+
   
-    public function show($id)
-    {
-        //
-    }
-  
-    public function edit($id)
+       public function edit($id)
     {
         $Categoria = CategoriasModel::findOrFail($id);
         return view('categorias.edit')->with('detailpage',$Categoria);
     }
   
-    public function update(CategoriaRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $Categoria = Categoria::findOrFail($id);
-        $Categoria->name        = $request->name;
-        $Categoria->description = $request->description;
-        $Categoria->quantity    = $request->quantity;
-        $Categoria->price       = $request->price;
+        $Categoria = CategoriasModel::findOrFail($id);
+        $Categoria->nome        = $request->nome;
+        $Categoria->descricao = $request->descricao;
         $Categoria->save();
-        return redirect()->route('Categorias.index')->with('message', 'Categoria updated successfully!');
+        return redirect('categorias')->with('message', 'Atualizado com sucesso!');
     }
   
     public function destroy($id)
     {
-        $Categoria = Categoria::findOrFail($id);
+        $Categoria = CategoriasModel::findOrFail($id);
         $Categoria->delete();
-        return redirect()->route('Categorias.index')->with('alert-success','Categoria hasbeen deleted!');
+        return redirect('categorias')->with('message','Deletado com sucesso!');
     }
 }

@@ -4,17 +4,48 @@
 @extends('layouts.app')
 
 @section('content')
-{{ Session::get('message') }}
-<h1>Categorias</h1>
+
+@if ( Session::get('message'))
+ <div class="alert alert-success"> {{ Session::get('message') }} </div>
+@endif
+
+
+<div class="row">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-heading">CATEGORIAS</div>
+                            <div class="table-responsive">
+                                <table class="table table-hover manage-u-table">
+                                    <thead>
+                                        <tr>
+                                            <th width="70" class="text-center">#</th>
+                                            <th>NOME</th>
+                                            <th>DESCRIÇÃO</th>
+                                            <th width="300">DELETAR</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
  
     @foreach($categorias as $categoria)
-        <h2><a href="/categorias/edit/{{ $categoria->id }}">{{ $categoria->nome }}</a></h2>
-        <p>{{ $categoria -> descricao }}</p>
-                <form action="/categorias/{{ $categoria->id }}" method="POST">
-            <input type="hidden" name="_method" value="delete">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="submit" name="name" value="Apagar">
-        </form>
+    <tr>
+
+        <td>{{$categoria->id}}</td>
+        <td><a href="/categorias/edit/{{ $categoria->id }}">{{ $categoria->nome }}</a></td>
+        <td>{{ $categoria -> descricao }}</td>
+            <td><a href="/categorias/delete/{{ $categoria->id }}">Remover</a></td>
+
         <hr>
+    </tr>
     @endforeach
+
+</tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+
+    <a href="/categorias/add">Adicionar</a>
 @endsection
+

@@ -1,3 +1,5 @@
+
+
 {{ config('app.name', 'Laravel') }}
 
 
@@ -5,22 +7,22 @@
 
 @section('content')
 {{ Session::get('message') }}
-
  <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title m-b-0">Adicionar Categoria</h3>
-                            <form action="/categorias/edits/{{$detailpage->id}}" method="POST" class="form-horizontal">
+                            <br>
+                            <form  action="/categorias/store" method="POST" class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-md-12">Nome</label>
                                     <div class="col-md-12">
-                                        <input type="text" name="nome" class="form-control" value="{{ $detailpage->nome }}">
+                                        <input type="text" name="nome" class="form-control" value="">
                                          </div>
                                 </div>                               
                                 <div class="form-group">
                                     <label class="col-md-12">Descrição</label>
                                     <div class="col-md-12">
-                                        <textarea class="form-control" name="descricao" rows="5">{{ $detailpage->descricao }}</textarea>
+                                        <textarea class="form-control" name="descricao" rows="5"></textarea>
                                     </div>
                                 </div>                                
                         </div>
@@ -29,4 +31,10 @@
                     </div>
                     
                 </div>
+
 @endsection
+
+
+
+
+
