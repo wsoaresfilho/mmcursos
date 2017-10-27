@@ -9,7 +9,8 @@
  <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title m-b-0">Adicionar Categoria</h3>
+                            <h3 class="box-title m-b-0">Editar Categoria</h3>
+                            <Br>
                             <form action="/categorias/edits/{{$detailpage->id}}" method="POST" class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-md-12">Nome</label>
