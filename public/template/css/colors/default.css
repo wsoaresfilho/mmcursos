@@ -23,6 +23,7 @@ body {
 }
 .top-left-part {
   background: #fff;
+  height: 66px;
 }
 .top-left-part .dark-logo {
   display: none;

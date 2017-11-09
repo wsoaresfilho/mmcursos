@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-	
+
 	<!-- Bootstrap Core CSS -->
 	<link href="{{ asset('template/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 	<!-- animation CSS -->
@@ -20,7 +20,7 @@
 	<!-- Custom CSS -->
 	<link href="{{ asset('template/css/style.css') }}" rel="stylesheet">
 	<!-- color CSS -->
-	<link href="{{ asset('template/css/colors/default.css') }}" id="theme"  rel="stylesheet">	
+	<link href="{{ asset('template/css/colors/default.css') }}" id="theme"  rel="stylesheet">
 </head>
 <body>
 
@@ -55,17 +55,10 @@
                 </div>
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
-                
                 <ul class="nav navbar-top-links navbar-left">
                     <li><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
-                    
-                    <!-- .Task dropdown -->
-                    
-                    <!-- .Megamenu -->
-                        
-                    <!-- /.Megamenu -->
                 </ul>
-                
+
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
                         <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
@@ -81,17 +74,17 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                             </li>
-<li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Sair
-                                        </a>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Sair
+                                </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>                            
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         @endif
                     </li>
                     <!-- /.dropdown -->
@@ -112,27 +105,21 @@
                     <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">{{ config('app.name') }}</span></h3> </div>
                 <div class="user-profile">
                     <div class="dropdown user-pro-body">
-                       
+
                     </div>
                 </div>
                 <ul class="nav" id="side-menu">
 
-<!-- Right Side Of Navbar -->
-
-
-
-
-
-
-
+                <!-- Right Side Of Navbar -->
                     @if (Auth::guest() == false)
                     <li> <a href="#" class="waves-effect"><i class="mdi mdi-format-color-fill fa-fw"></i> <span class="hide-menu">Administração<span class="fa arrow"></span>  </span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{ route('categorias') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Categorias</span></a></li>
+                            <li><a href="{{ route('cursos') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Cursos</span></a></li>
                             <li><a href="{{ route('login') }}"><i data-icon="&#xe025;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Materias</span></a></li>
                             <li><a href="{{ route('login') }}"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Usuários</span></a></li>
                         </ul>
-                 @endif 
+                 @endif
             </div>
         </div>
         <!-- ============================================================== -->
@@ -151,62 +138,6 @@
                     </div>
                     <!-- /.col -->
                 </div>
-                <!-- ============================================================== -->
-                <!-- start right sidebar -->
-                <!-- ============================================================== -->
-                <div class="right-sidebar">
-                    <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                        <div class="r-panel-body">
-                            <ul id="themecolors" class="m-t-20">
-                                <li><b>With Light sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                <li><a href="javascript:void(0)" data-theme="gray" class="yellow-theme">3</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                <li class="full-width"><b>With Dark sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                                <li><a href="javascript:void(0)" data-theme="gray-dark" class="yellow-dark-theme">9</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme working">12</a></li>
-                            </ul>
-                            <ul class="m-t-20 chatonline">
-                                <li><b>Chat option</b></li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/genu.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/john.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../plugins/images/users/pawandeep.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- end right sidebar -->
-                <!-- ============================================================== -->
             </div>
             <!-- /.container-fluid -->
             <footer class="footer text-center"> 2017 &copy; MM Cursos </footer>

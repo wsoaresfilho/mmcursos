@@ -1,0 +1,16 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Curso extends Model
+{
+    protected $fillable = [
+        'nome', 'descricao'
+    ];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
+    protected $primaryKey = 'curso_id';
+    protected $table = 'cursos';
+}
