@@ -6,29 +6,31 @@
     <div class="alert alert-success"> {{ Session::get('message') }} </div>
 @endif
 
-
 <div class="row">
     <div class="col-md-12">
         <div class="panel">
-            <div class="panel-heading">CATEGORIAS</div>
+            <div class="panel-heading">CONTEÚDOS</div>
             <div class="table-responsive">
                 <table class="table table-hover manage-u-table">
                     <thead>
                         <tr>
                             <th width="70" class="text-center">#</th>
                             <th>NOME</th>
+                            <th>ARQUIVO</th>
                             <th>DESCRIÇÃO</th>
                             <th width="300">DELETAR</th>
                         </tr>
                     </thead>
-
                     <tbody>
-                    @foreach($categorias as $categoria)
+
+                    @foreach($conteudos as $conteudo)
                         <tr>
-                            <td>{{$categoria->id}}</td>
-                            <td><a href="/categorias/edit/{{ $categoria->id }}">{{ $categoria->nome }}</a></td>
-                            <td>{{ $categoria->descricao }}</td>
-                            <td><a href="/categorias/delete/{{ $categoria->id }}">Remover</a></td>
+
+                            <td>{{$conteudo->id}}</td>
+                            <td><a href="/conteudos/edit/{{ $conteudo->id }}">{{ $conteudo->nome }}</a></td>
+                            <td>{{ $conteudo->arquivo }}</td>
+                            <td>{{ $conteudo->descricao }}</td>
+                            <td><a href="/conteudos/delete/{{ $conteudo->id }}">Remover</a></td>
                             <hr>
                         </tr>
                     @endforeach
@@ -40,5 +42,5 @@
     </div>
 </div>
 
-<a href="/categorias/add">Adicionar</a>
+<a href="/conteudos/add">Adicionar</a>
 @endsection

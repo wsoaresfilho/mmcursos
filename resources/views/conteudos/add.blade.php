@@ -6,14 +6,20 @@
  <div class="row">
     <div class="col-sm-12">
         <div class="white-box">
-            <h3 class="box-title m-b-0">Adicionar Categoria</h3>
+            <h3 class="box-title m-b-0">Adicionar Conteúdos</h3>
             <br>
-            <form  action="/categorias/store" method="POST" class="form-horizontal">
+            <form  action="/conteudos/store" method="POST" class="form-horizontal">
                 <div class="form-group">
                     <label class="col-md-12">Nome</label>
                     <div class="col-md-12">
                         <input type="text" name="nome" class="form-control" value="">
-                         </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-12">Arquivo</label>
+                    <div class="col-md-12">
+                        <input type="text" name="arquivo" class="form-control" value="">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-12">Descrição</label>
@@ -31,8 +37,3 @@
 </div>
 
 @endsection
-
-
-
-
-

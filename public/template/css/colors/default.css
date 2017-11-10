@@ -162,3 +162,8 @@ body {
 .panel-theme a:hover {
   color: #0791e6;
 }
+
+i.ti-menu {
+    top: 20px;
+    position: relative;
+}

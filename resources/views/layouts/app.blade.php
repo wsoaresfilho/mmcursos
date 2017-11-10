@@ -116,6 +116,7 @@
                         <ul class="nav nav-second-level">
                             <li><a href="{{ route('categorias') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Categorias</span></a></li>
                             <li><a href="{{ route('cursos') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Cursos</span></a></li>
+                            <li><a href="{{ route('conteudos') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Conteúdos</span></a></li>
                             <li><a href="{{ route('login') }}"><i data-icon="&#xe025;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Materias</span></a></li>
                             <li><a href="{{ route('login') }}"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Usuários</span></a></li>
                         </ul>
