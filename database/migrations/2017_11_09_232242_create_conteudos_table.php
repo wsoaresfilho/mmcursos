@@ -16,8 +16,8 @@ class CreateConteudosTable extends Migration
         Schema::create('conteudos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->string('descricao');
-            $table->string('arquivo');
+            $table->string('descricao')->nullable();;
+            $table->string('arquivo')->nullable();;
             $table->timestamps();
         });
     }

@@ -16,6 +16,7 @@
                         <tr>
                             <th width="70" class="text-center">#</th>
                             <th>NOME</th>
+                            <th>CATEGORIA</th>
                             <th>DESCRIÇÃO</th>
                             <th width="300">DELETAR</th>
                         </tr>
@@ -24,9 +25,9 @@
 
                     @foreach($cursos as $curso)
                         <tr>
-
                             <td>{{$curso->curso_id}}</td>
                             <td><a href="/cursos/edit/{{ $curso->curso_id }}">{{ $curso->nome }}</a></td>
+                            <td>{{$curso->categoria}}</td>
                             <td>{{ $curso->descricao }}</td>
                                 <td><a href="/cursos/delete/{{ $curso->curso_id }}">Remover</a></td>
                             <hr>

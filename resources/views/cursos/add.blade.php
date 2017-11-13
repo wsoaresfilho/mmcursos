@@ -13,7 +13,17 @@
                     <label class="col-md-12">Nome</label>
                     <div class="col-md-12">
                         <input type="text" name="nome" class="form-control" value="">
-                         </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-12">Categoria</label>
+                    <div class="col-md-12">
+                        <select name="categoria">
+                            @foreach($categorias as $categoria)
+                                <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-12">Descrição</label>

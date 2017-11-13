@@ -25,7 +25,6 @@
 
                     @foreach($conteudos as $conteudo)
                         <tr>
-
                             <td>{{$conteudo->id}}</td>
                             <td><a href="/conteudos/edit/{{ $conteudo->id }}">{{ $conteudo->nome }}</a></td>
                             <td>{{ $conteudo->arquivo }}</td>
@@ -33,6 +32,10 @@
                             <td><a href="/conteudos/delete/{{ $conteudo->id }}">Remover</a></td>
                             <hr>
                         </tr>
+                        {{-- <video width="400" controls>
+                          <source src="/arquivos/{{ $conteudo->arquivo }}" type="video/mp4">
+                          Your browser does not support HTML5 video.
+                        </video> --}}
                     @endforeach
 
                     </tbody>

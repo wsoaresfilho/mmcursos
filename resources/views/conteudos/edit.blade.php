@@ -27,10 +27,10 @@
                         <textarea class="form-control" name="descricao" rows="5">{{ $detailpage->descricao }}</textarea>
                     </div>
                 </div>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn waves-effect waves-light btn-info">Salvar</button>
             </form>
         </div>
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <button type="submit" class="btn waves-effect waves-light btn-info">Salvar</button>
     </div>
 </div>
 @endsection
