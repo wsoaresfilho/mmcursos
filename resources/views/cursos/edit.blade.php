@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label class="col-md-12">Categoria</label>
                     <div class="col-md-12">
-                        <select name="categoria">
+                        <select name="categoria" class="form-control select2" data-style="form-control">
                             @foreach($categorias as $categoria)
                                 <option value="{{$categoria->id}}" {{$categoria->id == $curso->categoria_id ? 'selected="selected"' : ''}}">{{$categoria->nome}}</option>
                             @endforeach

@@ -16,6 +16,7 @@
                         <tr>
                             <th width="70" class="text-center">#</th>
                             <th>NOME</th>
+                            <th>CURSO</th>
                             <th>ARQUIVO</th>
                             <th>DESCRIÇÃO</th>
                             <th width="300">DELETAR</th>
@@ -27,6 +28,7 @@
                         <tr>
                             <td>{{$conteudo->id}}</td>
                             <td><a href="/conteudos/edit/{{ $conteudo->id }}">{{ $conteudo->nome }}</a></td>
+                            <td>{{$conteudo->curso}}</td>
                             <td>{{ $conteudo->arquivo }}</td>
                             <td>{{ $conteudo->descricao }}</td>
                             <td><a href="/conteudos/delete/{{ $conteudo->id }}">Remover</a></td>

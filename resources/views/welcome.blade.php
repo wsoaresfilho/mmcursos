@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('template/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- animation CSS -->
@@ -20,7 +20,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('template/css/style.css') }}" rel="stylesheet">
     <!-- color CSS -->
-    <link href="{{ asset('template/css/colors/default.css') }}" id="theme"  rel="stylesheet">   
+    <link href="{{ asset('template/css/colors/default.css') }}" id="theme"  rel="stylesheet">
 </head>
 <body>
 
@@ -55,17 +55,17 @@
                 </div>
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
-                
+
                 <ul class="nav navbar-top-links navbar-left">
                     <li><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
-                    
+
                     <!-- .Task dropdown -->
-                    
+
                     <!-- .Megamenu -->
-                        
+
                     <!-- /.Megamenu -->
                 </ul>
-                
+
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
                         <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
@@ -91,7 +91,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>                            
+                                    </li>
                         @endif
                     </li>
                     <!-- /.dropdown -->
@@ -112,7 +112,7 @@
                     <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">{{ config('app.name') }}</span></h3> </div>
                 <div class="user-profile">
                     <div class="dropdown user-pro-body">
-                       
+
                     </div>
                 </div>
                 <ul class="nav" id="side-menu">
@@ -132,7 +132,7 @@
                             <li><a href="panel-ui-block.html"><i data-icon="&#xe025;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Item2</span></a></li>
                             <li><a href="buttons.html"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Item3</span></a></li>
                         </ul>
-                 @endif 
+                 @endif
             </div>
         </div>
         <!-- ============================================================== -->
@@ -215,56 +215,6 @@
         <!-- End Page Content -->
         <!-- ============================================================== -->
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

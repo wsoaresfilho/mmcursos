@@ -16,6 +16,16 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-md-12">Curso</label>
+                    <div class="col-md-12">
+                        <select name="curso" class="form-control select2" data-style="form-control">
+                            @foreach($cursos as $curso)
+                                <option value="{{$curso->curso_id}}">{{$curso->nome}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-md-12">Arquivo</label>
                     <div class="col-md-12">
                         <input type="text" name="arquivo" class="form-control" value="">

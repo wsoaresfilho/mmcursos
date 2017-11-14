@@ -16,9 +16,14 @@ class CreateConteudosTable extends Migration
         Schema::create('conteudos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->string('descricao')->nullable();;
-            $table->string('arquivo')->nullable();;
+            $table->string('descricao')->nullable();
+            $table->string('arquivo')->nullable();
+            $table->integer('curso_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('conteudos', function (Blueprint $table) {
+            $table->foreign('curso_id')->references('curso_id')->on('cursos')->onDelete('cascade');
         });
     }
 

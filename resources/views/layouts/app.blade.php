@@ -21,10 +21,14 @@
 	<link href="{{ asset('template/css/style.css') }}" rel="stylesheet">
 	<!-- color CSS -->
 	<link href="{{ asset('template/css/colors/default.css') }}" id="theme"  rel="stylesheet">
+
+    <link href="{{ asset('template/plugins/bower_components/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
+
+    <link href="{{ asset('template/plugins/bower_components/custom-select/custom-select.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-<body class="fix-header">
+<body class="fix-header content-wrapper">
     <!-- ============================================================== -->
     <!-- Preloader -->
     <!-- ============================================================== -->
@@ -148,70 +152,27 @@
         <!-- ============================================================== -->
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="/template/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Menu Plugin JavaScript -->
-<script src="/template/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
-
-<!--slimscroll JavaScript -->
-<script src="/template/js/jquery.slimscroll.js"></script>
-<!--Wave Effects -->
-<script src="/template/js/waves.js"></script>
-<!-- Custom Theme JavaScript -->
-<script src="/template/js/custom.min.js"></script>
-<!--Style Switcher -->
-<script src="/template/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/template/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="/template/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="/template/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="/template/js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/template/js/custom.min.js"></script>
+    <!--Style Switcher -->
+    <script src="/template/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="/template/plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>
+    <script src="/template/plugins/bower_components/bootstrap-select/bootstrap-select.js" type="text/javascript"></script>
+    <script>
+        jQuery(document).ready(function() {
+            $(".select2").select2();
+            $('.selectpicker').selectpicker();
+        });
+        </script>
 </body>
 </html>
