@@ -17,6 +17,7 @@ class CreateCursosTable extends Migration
             $table->integer('categoria_id')->unsigned();
             $table->string('descricao')->nullable();
             $table->string('url')->nullable();
+            $table->integer('likes')->default(0);
             $table->timestamps();
         });
 

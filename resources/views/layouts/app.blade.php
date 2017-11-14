@@ -49,7 +49,14 @@
             <div class="navbar-header">
                 <div class="top-left-part">
                     <!-- Logo -->
-                    <a class="logo" href="/">
+                    <?php
+                    if(Auth::user()->type == 'admin') {
+                        $home = "/admin";
+                    } else {
+                        $home = "/home";
+                    }
+                    ?>
+                    <a class="logo" href={{$home}}>
                         <!-- Logo icon image, you can use font-icon also --><b>
                         <!--This is dark logo icon--><img src="/template/plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="/template/plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
                      </b>
@@ -111,15 +118,23 @@
                 <ul class="nav" id="side-menu">
 
                 <!-- Right Side Of Navbar -->
-                    @if (Auth::guest() == false)
-                    <li> <a href="#" class="waves-effect"><i class="mdi mdi-format-color-fill fa-fw"></i> <span class="hide-menu">Administração<span class="fa arrow"></span>  </span></a>
+                @if (Auth::guest() == false)
+                    @if (Auth::user()->type == 'admin')
                         <ul class="nav nav-second-level">
                             <li><a href="{{ route('categorias') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Categorias</span></a></li>
                             <li><a href="{{ route('cursos') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Cursos</span></a></li>
                             <li><a href="{{ route('conteudos') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Conteúdos</span></a></li>
                             <li><a href="{{ route('login') }}"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Usuários</span></a></li>
                         </ul>
-                 @endif
+                    @else
+                        <ul class="nav nav-second-level">
+                            <li><a href="{{ route('aulas') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Dashboard</span></a></li>
+                            <li><a href="{{ route('aulas') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Teste</span></a></li>
+                            <li><a href="{{ route('aulas') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Teste 2</span></a></li>
+                            <li><a href="{{ route('login') }}"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Usuários</span></a></li>
+                        </ul>
+                    @endif
+                @endif
             </div>
         </div>
         <!-- ============================================================== -->

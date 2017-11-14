@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Rota padrão para usuários
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Rota padrão para admins
+Route::get('/admin', 'AdminController@index')->name('admin');
 
 //Categorias
 Route::get('/categorias', 'CategoriasController@index')->name('categorias');
