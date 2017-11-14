@@ -8,7 +8,7 @@
         <div class="white-box">
             <h3 class="box-title m-b-0">Adicionar Cursos</h3>
             <br>
-            {!! Form::open(array('route' => 'cursosstore','enctype' => 'multipart/form-data')) !!}
+            {!! Form::open(array('route' => 'cursosstore','enctype' => 'multipart/form-data', 'class' => 'form-horizontal')) !!}
                 <div class="form-group">
                     <label class="col-md-12">Nome</label>
                     <div class="col-md-12">
@@ -20,8 +20,8 @@
                     <div class="col-md-12">
                          {!! Form::file('image', array('class' => 'image')) !!}
                     </div>
-                </div>                
-                
+                </div>
+
                 <div class="form-group">
                     <label class="col-md-12">Categoria</label>
                     <div class="col-md-12">

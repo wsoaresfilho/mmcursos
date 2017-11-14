@@ -36,8 +36,16 @@ class ConteudosController extends Controller
         ]);
 
         $conteudo = new Conteudo;
+        $arquivo = $request->file('arquivo');
+
+        $input['imagename'] = time().'.'.$arquivo->getClientOriginalExtension();
+
+        $destinationPath = public_path('/arquivos');
+
+        $arquivo->move($destinationPath, $input['imagename']);
+
         $conteudo->nome = $request->nome;
-        $conteudo->arquivo = $request->arquivo;
+        $conteudo->arquivo = $input['imagename'];
         $conteudo->descricao = $request->descricao;
         $conteudo->curso_id = $request->curso;
         $conteudo->save();
@@ -57,9 +65,18 @@ class ConteudosController extends Controller
     public function update(Request $request, $id)
     {
         $conteudo = Conteudo::findOrFail($id);
+
+        $arquivo = $request->file('arquivo');
+
+        $input['imagename'] = time().'.'.$arquivo->getClientOriginalExtension();
+
+        $destinationPath = public_path('/arquivos');
+
+        $arquivo->move($destinationPath, $input['imagename']);
+
         $conteudo->nome = $request->nome;
         $conteudo->descricao = $request->descricao;
-        $conteudo->arquivo = $request->arquivo;
+        $conteudo->arquivo = $input['imagename'];
         $conteudo->curso_id = $request->curso;
         $conteudo->save();
         return redirect('conteudos')->with('message', 'Atualizado com sucesso!');

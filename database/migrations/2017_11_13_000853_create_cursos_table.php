@@ -16,6 +16,7 @@ class CreateCursosTable extends Migration
             $table->string('nome');
             $table->integer('categoria_id')->unsigned();
             $table->string('descricao')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
         });
 
