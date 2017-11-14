@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email',250)->unique();
+            $table->string('email',250);
             $table->string('password');
             $table->enum('type', ['admin', 'user', 'teacher'])->default('user');
             $table->rememberToken();
@@ -25,13 +25,7 @@ class CreateUsersTable extends Migration
         });
 
 
-        // Denis, depois precisamos mover esse código abaixo pra uma "seed" ok?
-        DB::table('users')->where('email', '=', 'dennisrojaspereira@gmail.com')->delete();
-        DB::table('users')->insert([
-            'name' => 'User1',
-            'email' => 'dennisrojaspereira@gmail.com',
-            'password' => bcrypt('Usf123'),
-        ]);
+
     }
 
     /**
