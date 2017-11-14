@@ -8,7 +8,7 @@
         <div class="white-box">
             <h3 class="box-title m-b-0">Editar Curso</h3>
             <Br>
-            <form action="/cursos/edits/{{$curso->curso_id}}" method="POST" class="form-horizontal">
+            {!! Form::open(array('route' => ['cursosupdate', $curso->curso_id ],'enctype' => 'multipart/form-data')) !!}
                 <div class="form-group">
                     <label class="col-md-12">Nome</label>
                     <div class="col-md-12">
@@ -25,6 +25,12 @@
                         </select>
                     </div>
                 </div>
+                 <div class="form-group">
+                    <label class="col-md-12">Imagem</label>
+                    <div class="col-md-12">
+                         {!! Form::file('image', array('class' => 'image')) !!}
+                    </div>
+                </div>      
                 <div class="form-group">
                     <label class="col-md-12">Descrição</label>
                     <div class="col-md-12">
@@ -33,7 +39,7 @@
                 </div>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit" class="btn waves-effect waves-light btn-info">Salvar</button>
-            </form>
+             {!! Form::close() !!}
         </div>
     </div>
 </div>

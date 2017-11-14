@@ -43,6 +43,19 @@ Route::post('/cursos/store', 'CursosController@store')->name('cursosstore');
 
 Route::post('/cursos/edits/{id}', 'CursosController@update')->name('cursosupdate');
 
+//users
+Route::get('/users', 'usersController@index')->name('users');
+
+Route::get('/users/edit/{id}', 'usersController@edit')->name('usersedit');
+
+Route::get('/users/add', 'usersController@add')->name('usersadd');
+
+Route::post('/users/store', 'usersController@store')->name('usersstore');
+
+Route::post('/users/edits/{id}', 'usersController@update')->name('usersupdate');
+
+Route::get('/users/delete/{id}', 'usersController@destroy')->name('usersdelete');
+
 Route::get('/cursos/delete/{id}', 'CursosController@destroy')->name('cursosdelete');
 
 //Conteudos
