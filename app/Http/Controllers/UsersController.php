@@ -12,16 +12,16 @@ class UsersController extends Controller
 
     public function index()
     {
-        $Users = User::orderBy('created_at', 'desc')->paginate(10);
+        $users = User::orderBy('created_at', 'desc')->paginate(10);
         return view('Users.index', [
-            'users' => $Users
+            'users' => $users
         ]);
     }
 
     public function add()
     {
         $cursos = Curso::orderBy('created_at', 'desc')->paginate(10);
-        
+
         foreach ($cursos as $curso) {
             $cat = Categoria::where('id', $curso->categoria_id)->first();
             $curso->categoria = $cat->nome;
@@ -36,16 +36,16 @@ class UsersController extends Controller
             'name' => 'required',
             'email' => 'required'
         ]);
-        
-        
-        
+
+
+
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->type = $request->type;
         $user->save();
-        
+
         $cursos = Curso::orderBy('created_at', 'desc')->paginate(10);
         foreach ($cursos as $curso) {
             $valor = $request->input('curso_'.$curso->curso_id);
@@ -61,18 +61,18 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-        $User = User::findOrFail($id);
-        
+        $user = User::findOrFail($id);
+
         $cursos = Curso::orderBy('created_at', 'desc')->paginate(10);
-        
+
         foreach ($cursos as $curso) {
             $cat = Categoria::where('id', $curso->categoria_id)->first();
-            $val = CursoUser::where('user_id', $User->id)->where('curso_id',$curso->curso_id)->count();
+            $val = CursoUser::where('user_id', $user->id)->where('curso_id',$curso->curso_id)->count();
             $curso->categoria = $cat->nome;
             $curso->val = $val;
         }
 
-        return view('users.edit',['cursos' => $cursos])->with('detailpage', $User);
+        return view('users.edit',['cursos' => $cursos])->with('user', $user);
     }
 
     public function update(Request $request, $id)
@@ -83,7 +83,7 @@ class UsersController extends Controller
         $User->password = bcrypt($request->email);
         $User->type = $request->type;
         $User->save();
-        
+
         $cursos = Curso::orderBy('created_at', 'desc')->paginate(10);
         foreach ($cursos as $curso) {
             $valor = $request->input('curso_'.$curso->curso_id);
@@ -95,7 +95,7 @@ class UsersController extends Controller
                 $cursoUser->save();
             }
         }
-        
+
         return redirect('users')->with('message', 'Atualizado com sucesso!');
     }
 

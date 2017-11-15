@@ -67,7 +67,9 @@
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-left">
-                    <li><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
+                    <li>
+                        <a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-top-links navbar-right pull-right">

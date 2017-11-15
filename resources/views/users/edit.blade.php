@@ -6,13 +6,13 @@
 		<div class="white-box">
 			<h3 class="box-title m-b-0">Editar Usuário</h3>
 			<Br>
-			<form action="/users/edits/{{$detailpage->id}}" method="POST"
+			<form action="/users/edits/{{$user->id}}" method="POST"
 				class="form-horizontal">
 				<div class="form-group">
 					<label class="col-md-12">Nome</label>
 					<div class="col-md-12">
 						<input type="text" name="name" class="form-control"
-							value="{{ $detailpage->name }}">
+							value="{{ $user->name }}">
 					</div>
 				</div>
 
@@ -20,16 +20,24 @@
 					<label class="col-md-12">Email</label>
 					<div class="col-md-12">
 						<input type="text" name="email" class="form-control"
-							value="{{ $detailpage->email }}">
+							value="{{ $user->email }}">
 					</div>
 				</div>
-
 
 				<div class="form-group">
 					<label class="col-md-12">Tipo</label>
 					<div class="col-md-12">
-						<input type="text" name="type" class="form-control"
-							value="{{ $detailpage->type }}">
+						<select name="type" class="form-control select2" data-style="form-control">
+							<option value="admin"
+								<?php if($user->type == "admin") { ?>  selected="selected" <?php } ?>
+							>Administrador</option>
+							<option value="prof"
+								<?php if($user->type == "prof") { ?>  selected="selected" <?php } ?>
+							>Professor</option>
+							<option value="user"
+								<?php if($user->type == "user") { ?>  selected="selected" <?php } ?>
+							>Aluno</option>
+						</select>
 					</div>
 				</div>
 
@@ -37,7 +45,7 @@
 					<label class="col-md-12">Senha</label>
 					<div class="col-md-12">
 						<input type="password" name="password" class="form-control"
-							value="{{ $detailpage->password }}">
+							value="{{ $user->password }}">
 					</div>
 				</div>
 				<div class="form-group">

@@ -31,15 +31,15 @@
 				<div class="form-group">
 					<label class="col-md-12">Tipo</label>
 					<div class="col-md-12">
-						<select name="type">
+						<select name="type" class="form-control select2" data-style="form-control">
 							<option value="admin">Administrador</option>
-							<option value="professor">Professor</option>
-							<option value="aluno">Aluno</option>
+							<option value="prof">Professor</option>
+							<option value="user">Aluno</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<h3 class="box-title m-b-0">Cursos Permitidos</h3>
+					<h3 class="box-title m-b-0">Matricular nos Cursos</h3>
 
 					@foreach($cursos as $curso)
 					<div class="checkbox checkbox-success checkbox-circle">
