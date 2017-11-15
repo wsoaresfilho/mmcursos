@@ -76,3 +76,5 @@ Route::post('/conteudos/store', 'ConteudosController@store')->name('conteudossto
 Route::post('/conteudos/edits/{id}', 'ConteudosController@update')->name('conteudosupdate');
 
 Route::get('/conteudos/delete/{id}', 'ConteudosController@destroy')->name('conteudosdelete');
+
+Route::get('/certificado/{curso_id}', 'HomeController@certificado')->name('certificado');

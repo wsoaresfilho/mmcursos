@@ -45,6 +45,12 @@
                                     <?php } ?>
                                 </a>
                             @endforeach
+                            <a><li class="list-group-item" >
+                                            <a href=/certificado/{{$curso->curso_id}}}>
+                                            Certificado
+                                            </a>
+                                        </li>
+                            </a>
                             </ul>
                         </div>
                     </div>

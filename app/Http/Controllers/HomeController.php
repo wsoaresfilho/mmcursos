@@ -74,4 +74,18 @@ class HomeController extends Controller
             'assistidos' => $assistidos
         ]);
     }
+    
+    public function certificado($curso_id)
+    {
+        $conteudos = Conteudo::where('curso_id', $curso_id)->get();
+        foreach ($conteudos as $conteudo) {
+            $cat = ConteudoUser::where('user_id', Auth::id())->where('conteudo_id', $conteudo->id)->count();
+            if ($cat < 1 ) {
+                return view('aulas.completarcurso');
+            }
+        }
+        $curso = Curso::findOrFail($curso_id);
+        return view('aulas.certificado',['cursos' => $curso]);
+        
+    }
 }
