@@ -21,17 +21,17 @@
                     <div class="row">
                         <div class="col-sm-8">
                             <video controls>
-                                <source src="/arquivos/{{ $conteudos->first()->arquivo }}" type="video/mp4">
+                                <source src="/arquivos/{{ $aula->arquivo }}" type="video/mp4">
                                 Your browser does not support HTML5 video.
                             </video>
                         </div>
 
                         <div class="col-sm-4">
                             <ul class="list-group list-group-full">
-                            @foreach ($conteudos as $aula)
+                            @foreach ($conteudos as $conteudo)
                                 <li class="list-group-item">
                                     <span class="badge badge-success">6</span>
-                                    {{$aula->nome}}
+                                    {{$conteudo->nome}}
                                 </li>
                             @endforeach
                             </ul>

@@ -44,12 +44,14 @@ class HomeController extends Controller
         return view('aulas.cursos', ['cursos' => $cursos]);
     }
 
-    public function aulas($id)
+    public function aulas($curso_id, $conteudo_id)
     {
-        $curso = Curso::findOrFail($id);
+        $curso = Curso::findOrFail($curso_id);
 
-        $conteudos = Conteudo::where('curso_id', $id)->get();
+        $conteudos = Conteudo::where('curso_id', $curso_id)->get();
 
-        return view('aulas.aulas', ['curso' => $curso, 'conteudos' => $conteudos]);
+        $aula = Conteudo::findOrFail($conteudo_id);
+
+        return view('aulas.aulas', ['curso' => $curso, 'conteudos' => $conteudos, 'aula' => $aula]);
     }
 }
