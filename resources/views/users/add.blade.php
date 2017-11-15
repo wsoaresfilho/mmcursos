@@ -38,6 +38,18 @@
 						</select>
 					</div>
 				</div>
+				<div class="form-group">
+					<h3 class="box-title m-b-0">Cursos Permitidos</h3>
+
+					@foreach($cursos as $curso)
+					<div class="checkbox checkbox-success checkbox-circle">
+						<input type="checkbox" name="curso_{{$curso->curso_id}}"
+							id="{{$curso->curso_id}}"> <label
+							for="curso_{{$curso->curso_id}}"> {{$curso->nome}} </label>
+					</div>
+					@endforeach
+
+				</div>
 
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<button type="submit" class="btn waves-effect waves-light btn-info">Salvar</button>
