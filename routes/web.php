@@ -19,10 +19,11 @@ Auth::routes();
 
 // Rota padrão para usuários
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@dash')->name('dash');
+Route::get('/aulas/{id}', 'HomeController@aulas')->name('aulas');
 
 // Rota padrão para admins
 Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/dashboard', 'HomeController@dash')->name('dash');
 
 //Categorias
 Route::get('/categorias', 'CategoriasController@index')->name('categorias');

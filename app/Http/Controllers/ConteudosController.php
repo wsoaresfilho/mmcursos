@@ -30,22 +30,22 @@ class ConteudosController extends Controller
      public function store(Request $request)
     {
         $this->validate($request, [
-            'nome' => 'required',
-            'arquivo' => 'required',
-            'descricao' => 'required'
+            'nome' => 'string|required',
+            'arquivo' => 'required|size:90000',
+            'descricao' => 'string'
         ]);
 
         $conteudo = new Conteudo;
         $arquivo = $request->file('arquivo');
-
-        $input['imagename'] = time().'.'.$arquivo->getClientOriginalExtension();
-
-        $destinationPath = public_path('/arquivos');
-
-        $arquivo->move($destinationPath, $input['imagename']);
+        $imagename = "";
+        if(isset($arquivo)) {
+            $imagename = $arquivo->getClientOriginalName();
+            $destinationPath = public_path('/arquivos');
+            $arquivo->move($destinationPath, $imagename);
+        }
 
         $conteudo->nome = $request->nome;
-        $conteudo->arquivo = $input['imagename'];
+        $conteudo->arquivo = $imagename;
         $conteudo->descricao = $request->descricao;
         $conteudo->curso_id = $request->curso;
         $conteudo->save();
@@ -64,19 +64,20 @@ class ConteudosController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $conteudo = Conteudo::findOrFail($id);
 
         $arquivo = $request->file('arquivo');
-
-        $input['imagename'] = time().'.'.$arquivo->getClientOriginalExtension();
-
-        $destinationPath = public_path('/arquivos');
-
-        $arquivo->move($destinationPath, $input['imagename']);
+        $imagename = "";
+        if(isset($arquivo)) {
+            $imagename = $arquivo->getClientOriginalName();
+            $destinationPath = public_path('/arquivos');
+            $arquivo->move($destinationPath, $imagename);
+        }
 
         $conteudo->nome = $request->nome;
         $conteudo->descricao = $request->descricao;
-        $conteudo->arquivo = $input['imagename'];
+        $conteudo->arquivo = $imagename;
         $conteudo->curso_id = $request->curso;
         $conteudo->save();
         return redirect('conteudos')->with('message', 'Atualizado com sucesso!');

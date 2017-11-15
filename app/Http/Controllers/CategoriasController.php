@@ -45,7 +45,7 @@ class CategoriasController extends Controller
     public function update(Request $request, $id)
     {
         $Categoria = Categoria::findOrFail($id);
-        $Categoria->nome        = $request->nome;
+        $Categoria->nome = $request->nome;
         $Categoria->descricao = $request->descricao;
         $Categoria->save();
         return redirect('categorias')->with('message', 'Atualizado com sucesso!');

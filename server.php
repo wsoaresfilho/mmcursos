@@ -18,4 +18,7 @@ if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
     return false;
 }
 
+ini_set('post_max_size','256M');
+ini_set('upload_max_filesize','256M');
+
 require_once __DIR__.'/public/index.php';

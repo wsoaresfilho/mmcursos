@@ -39,14 +39,14 @@ class CursosController extends Controller
         $curso = new Curso();
 
         $image = $request->file('image');
+        $imagename = "";
+        if(isset($arquivo)) {
+            $imagename = $arquivo->getClientOriginalName();
+            $destinationPath = public_path('/images');
+            $arquivo->move($destinationPath, $imagename);
+        }
 
-        $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-
-        $destinationPath = public_path('/images');
-
-        $image->move($destinationPath, $input['imagename']);
-
-        $curso->url = $input['imagename'];
+        $curso->url = $imagename;
         $curso->nome = $request->nome;
         $curso->categoria_id = $request->categoria;
         $curso->descricao = $request->descricao;
@@ -71,17 +71,17 @@ class CursosController extends Controller
         $curso = Curso::findOrFail($id);
 
         $image = $request->file('image');
-
-        $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-
-        $destinationPath = public_path('/images');
-
-        $image->move($destinationPath, $input['imagename']);
+        $imagename = "";
+        if(isset($arquivo)) {
+            $imagename = $arquivo->getClientOriginalName();
+            $destinationPath = public_path('/images');
+            $arquivo->move($destinationPath, $imagename);
+        }
 
         $curso->nome = $request->nome;
         $curso->descricao = $request->descricao;
         $curso->categoria_id = $request->categoria;
-        $curso->url = $input['imagename'];
+        $curso->url = $imagename;
         $curso->save();
         return redirect('cursos')->with('message', 'Atualizado com sucesso!');
     }

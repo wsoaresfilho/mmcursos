@@ -19,17 +19,12 @@
                 <!-- /.usercard -->
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="white-box">
-                        <div class="el-card-item">
-                            <div class="el-card-avatar el-overlay-1"> <img src="../plugins/images/users/java.png" width="400" height="400" />
-                                <div class="el-overlay">
-                                    <ul class="el-info">
-                                        <li><a class="btn default btn-outline image-popup-vertical-fit" href="../plugins/images/users/java.png"><i class="icon-magnifier"></i></a></li>
-                                        <li><a class="btn default btn-outline" href="javascript:void(0);"><i class="icon-link"></i></a></li>
-                                    </ul>
-                                </div>
+                        <div class="el-card-item" onclick="redireciona({{$curso->curso_id}})">
+                            {{-- <div class="el-card-avatar el-overlay-1"> <img src="../plugins/images/users/java.png" width="300" height="300" /> --}}
+                            <div class="el-card-avatar el-overlay-1"> <img src="../images/{{ $curso->url }}" width="300" height="300" />
                             </div>
                             <div class="el-card-content">
-                                <h3 class="box-title">{{ $curso->nome }}</h3> <small>Básico</small>
+                                <h3 class="box-title">{{ $curso->nome }}</h3> <small>{{ $curso->categoria }}</small>
                                 <br/> </div>
                         </div>
                     </div>
@@ -37,5 +32,10 @@
                 <!-- /.usercard-->
             @endforeach
         </div>
+        <script type="text/javascript">
+            function redireciona(page){
+                window.location = '/aulas/' + page;
+            }
+        </script>
     </div>
 @endsection
