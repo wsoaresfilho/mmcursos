@@ -31,7 +31,7 @@ class ConteudosController extends Controller
     {
         $this->validate($request, [
             'nome' => 'string|required',
-            'arquivo' => 'required|size:90000',
+            'arquivo' => 'required|max:900000',
             'descricao' => 'string'
         ]);
 
@@ -64,6 +64,11 @@ class ConteudosController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'nome' => 'string|required',
+            'arquivo' => 'required|max:900000',
+            'descricao' => 'string'
+        ]);
 
         $conteudo = Conteudo::findOrFail($id);
 

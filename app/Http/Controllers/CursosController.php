@@ -33,6 +33,8 @@ class CursosController extends Controller
     {
         $this->validate($request, [
             'nome' => 'required',
+            'categoria' => 'numeric|required',
+            'image' => 'required|max:900000',
             'descricao' => 'required'
         ]);
 
@@ -68,6 +70,13 @@ class CursosController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'nome' => 'required',
+            'categoria' => 'numeric|required',
+            'image' => 'required|max:900000',
+            'descricao' => 'required'
+        ]);
+
         $curso = Curso::findOrFail($id);
 
         $image = $request->file('image');

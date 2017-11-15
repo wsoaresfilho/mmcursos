@@ -46,11 +46,13 @@ class DatabaseSeeder extends Seeder
             [
                 'nome' => 'EPI',
                 'descricao' => 'Curso sobre importância do uso de uso de EPI em ambientes de trabalho.',
+                'url' => 'php.png',
                 'categoria_id' => 2
             ],
             [
                 'nome' => 'Liderança de equipes',
                 'descricao' => 'Curso sobre técnicas para melhor liderar equipes.',
+                'url' => 'python.png',
                 'categoria_id' => 1
             ]
         ]);

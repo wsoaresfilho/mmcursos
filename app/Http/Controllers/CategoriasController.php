@@ -23,8 +23,8 @@ class CategoriasController extends Controller
      public function store(Request $request)
     {
         $this->validate($request, [
-            'nome' => 'required',
-            'descricao' => 'required',
+            'nome' => 'string|required',
+            'descricao' => 'string|required',
         ]);
 
         $produtos = new Categoria;
@@ -44,6 +44,11 @@ class CategoriasController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'nome' => 'string|required',
+            'descricao' => 'string|required',
+        ]);
+
         $Categoria = Categoria::findOrFail($id);
         $Categoria->nome = $request->nome;
         $Categoria->descricao = $request->descricao;

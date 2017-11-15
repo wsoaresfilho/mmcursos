@@ -6,6 +6,16 @@
 		<div class="white-box">
 			<h3 class="box-title m-b-0">Adicionar Usuário</h3>
 			<br>
+			@if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
 			<form action="/users/store" method="POST" class="form-horizontal">
 				<div class="form-group">
 					<label class="col-md-12">Nome</label>

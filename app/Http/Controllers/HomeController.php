@@ -8,6 +8,7 @@ use App\CursoUser;
 use App\Curso;
 use App\Categoria;
 use App\Conteudo;
+use App\ConteudoUser;
 
 class HomeController extends Controller
 {
@@ -44,14 +45,27 @@ class HomeController extends Controller
         return view('aulas.cursos', ['cursos' => $cursos]);
     }
 
-    public function aulas($curso_id, $conteudo_id)
+    public function aulas($curso_id, $conteudo_id, $id_assistido)
     {
+
         $curso = Curso::findOrFail($curso_id);
-
         $conteudos = Conteudo::where('curso_id', $curso_id)->get();
-
         $aula = Conteudo::findOrFail($conteudo_id);
 
-        return view('aulas.aulas', ['curso' => $curso, 'conteudos' => $conteudos, 'aula' => $aula]);
+        if (isset($id_assistido) && $id_assistido != "0"){
+            $conteudo_user = new ConteudoUser;
+            $conteudo_user->conteudo_id = $id_assistido;
+            $conteudo_user->user_id = Auth::id();
+            $conteudo_user->save();
+        }
+
+        $assistidos = ConteudoUser::where('user_id', Auth::id())->pluck('conteudo_id')->toArray();
+
+        return view('aulas.aulas',[
+            'curso' => $curso,
+            'conteudos' => $conteudos,
+            'aula' => $aula,
+            'assistidos' => $assistidos
+        ]);
     }
 }

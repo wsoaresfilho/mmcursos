@@ -34,7 +34,7 @@
         </div>
         <script type="text/javascript">
             function redireciona(page){
-                window.location = '/aulas/' + page + '/1';
+                window.location = '/aulas/' + page + '/1/0';
             }
         </script>
     </div>
