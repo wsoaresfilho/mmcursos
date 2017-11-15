@@ -140,9 +140,6 @@
                     @else
                         <ul class="nav nav-second-level">
                             <li><a href="{{ route('dash') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Dashboard</span></a></li>
-                            <li><a href="{{ route('home') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Teste</span></a></li>
-                            <li><a href="{{ route('home') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Teste 2</span></a></li>
-                            <li><a href="{{ route('login') }}"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Usuários</span></a></li>
                         </ul>
                     @endif
                 @endif
