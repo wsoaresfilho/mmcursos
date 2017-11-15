@@ -75,13 +75,13 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Aula 1 de EPI',
                 'descricao' => 'Primeira aula do curso de EPI.',
                 'curso_id' => 1,
-                'arquivo' => 'Diferença entre Liderança e Gestão.mp4'
+                'arquivo' => 'video1epi.mp4'
             ],
             [
                 'nome' => 'Aula 2 de EPI',
                 'descricao' => 'Primeira aula do curso de EPI.',
                 'curso_id' => 1,
-                'arquivo' => 'Natureza é de Deus-Reflexão.mp4'
+                'arquivo' => 'video2epi.mp4'
             ]
         ]);
     }
