@@ -28,7 +28,7 @@
                             <p>{{$aula->descricao}}</p>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-2">
                             <ul class="list-group list-group-full">
                             @foreach ($conteudos as $conteudo)
                                 <a href="/aulas/{{$curso->curso_id}}/{{$conteudo->id}}/{{$aula->id}}">
