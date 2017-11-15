@@ -54,5 +54,17 @@ class DatabaseSeeder extends Seeder
                 'categoria_id' => 1
             ]
         ]);
+
+        // Inclusão de cursos_users
+        DB::table('cursos_users')->insert([
+            [
+                'curso_id' => 1,
+                'user_id' => 2
+            ],
+            [
+                'curso_id' => 2,
+                'user_id' => 2
+            ]
+        ]);
     }
 }

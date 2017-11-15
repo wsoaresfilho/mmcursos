@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Rota padrão para admins
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/dashboard', 'HomeController@dash')->name('dash');
 
 //Categorias
 Route::get('/categorias', 'CategoriasController@index')->name('categorias');

@@ -22,9 +22,9 @@
 	<!-- color CSS -->
 	<link href="{{ asset('template/css/colors/default.css') }}" id="theme"  rel="stylesheet">
 
-    <link href="{{ asset('template/plugins/bower_components/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
 
-    <link href="{{ asset('template/plugins/bower_components/custom-select/custom-select.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('plugins/bower_components/custom-select/custom-select.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -58,10 +58,10 @@
                     ?>
                     <a class="logo" href={{$home}}>
                         <!-- Logo icon image, you can use font-icon also --><b>
-                        <!--This is dark logo icon--><img src="/template/plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="/template/plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
+                        <!--This is dark logo icon--><img src="/plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="/plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
                      </b>
                         <!-- Logo text image you can use text also --><span class="hidden-xs">
-                        <!--This is dark logo text--><img src="/template/plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="/template/plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
+                        <!--This is dark logo text--><img src="/plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="/plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
                      </span> </a>
                 </div>
                 <!-- /Logo -->
@@ -128,7 +128,7 @@
                         </ul>
                     @else
                         <ul class="nav nav-second-level">
-                            <li><a href="{{ route('home') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Dashboard</span></a></li>
+                            <li><a href="{{ route('dash') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Dashboard</span></a></li>
                             <li><a href="{{ route('home') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Teste</span></a></li>
                             <li><a href="{{ route('home') }}"><i data-icon="&#xe026;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Teste 2</span></a></li>
                             <li><a href="{{ route('login') }}"><i class="ti-layout-menu fa-fw"></i> <span class="hide-menu">Usuários</span></a></li>
@@ -167,7 +167,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="/template/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="/template/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
     <!--slimscroll JavaScript -->
     <script src="/template/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
@@ -175,9 +175,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="/template/js/custom.min.js"></script>
     <!--Style Switcher -->
-    <script src="/template/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
-    <script src="/template/plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>
-    <script src="/template/plugins/bower_components/bootstrap-select/bootstrap-select.js" type="text/javascript"></script>
+    <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>
+    <script src="plugins/bower_components/bootstrap-select/bootstrap-select.js" type="text/javascript"></script>
     <script>
         jQuery(document).ready(function() {
             $(".select2").select2();
