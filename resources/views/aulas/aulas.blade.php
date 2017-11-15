@@ -29,10 +29,12 @@
                         <div class="col-sm-4">
                             <ul class="list-group list-group-full">
                             @foreach ($conteudos as $conteudo)
-                                <li class="list-group-item">
-                                    <span class="badge badge-success">6</span>
-                                    {{$conteudo->nome}}
-                                </li>
+                                <a href="/aulas/{{$curso->curso_id}}/{{$conteudo->id}}">
+                                    <li class="list-group-item" >
+                                        <span class="badge badge-success">+</span>
+                                        {{$conteudo->nome}}
+                                    </li>
+                                </a>
                             @endforeach
                             </ul>
                         </div>
