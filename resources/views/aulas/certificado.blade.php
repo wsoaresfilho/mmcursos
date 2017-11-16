@@ -1,4 +1,4 @@
-<div style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
+<div style="margin: auto; width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
 <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
        <span style="font-size:50px; font-weight:bold">Certificado</span>
        <br><br>
