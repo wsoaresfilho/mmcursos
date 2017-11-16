@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+
         //print_r(Auth::user());
         if (Auth::user()->type == "user")
         {
@@ -66,15 +66,18 @@ class HomeController extends Controller
         }
 
         $assistidos = ConteudoUser::where('user_id', Auth::id())->pluck('conteudo_id')->toArray();
+        $assistidos = array_unique($assistidos);
+        $paracertificado = Conteudo::where('curso_id', $curso_id)->pluck('id')->toArray();
 
         return view('aulas.aulas',[
             'curso' => $curso,
             'conteudos' => $conteudos,
             'aula' => $aula,
-            'assistidos' => $assistidos
+            'assistidos' => $assistidos,
+            'paracertificado' => $paracertificado
         ]);
     }
-    
+
     public function certificado($curso_id)
     {
         $conteudos = Conteudo::where('curso_id', $curso_id)->get();
@@ -86,6 +89,6 @@ class HomeController extends Controller
         }
         $curso = Curso::findOrFail($curso_id);
         return view('aulas.certificado',['cursos' => $curso]);
-        
+
     }
 }
