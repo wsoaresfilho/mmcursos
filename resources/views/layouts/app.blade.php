@@ -82,7 +82,7 @@
                 </ul>
 
                 <ul class="nav navbar-top-links navbar-right pull-right">
-                                        <li> <!-- Authentication Links -->
+                        <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Entrar</a></li>
                             <li><a href="{{ route('register') }}">Cadastrar</a></li>
@@ -104,7 +104,7 @@
                                 </form>
                             </li>
                         @endif
-                    </li>
+
                     <!-- /.dropdown -->
                 </ul>
             </div>

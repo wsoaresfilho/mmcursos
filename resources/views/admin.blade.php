@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-    <h4 class="page-title">Admin Dashboard</h4> </div>
+    <h4 class="page-title">Dashboard de Administrador</h4> </div>
 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 
     <ol class="breadcrumb">
-        <li><a href="#">Admin</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#"></a>Dashboard</li>
+        <li class="active">Admin</li>
     </ol>
 </div>
 
